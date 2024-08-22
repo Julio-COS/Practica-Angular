@@ -1,0 +1,8 @@
+<div>
+    <button [ngClass]="{'disabled': button_disabled}" class="btn btn-danger">Color Rojo</button>
+    <button [ngClass]="{'disabled': button_disabled}" class="btn btn-success mx-2">Color Verde</button>
+    <button [ngClass]="{'disabled': button_disabled}" class="btn btn-primary">Color Azul</button>
+</div>
+<div>
+    <button (click)="button_disabled = ! button_disabled">Descativar/Activar</button>
+</div>
