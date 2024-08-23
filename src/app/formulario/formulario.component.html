@@ -1,0 +1,35 @@
+<div>
+    <input type="text" placeholder="Ingresa tu Nombre" class="form-control" #name>
+    <button class="btn btn-primary mt-2" (click)="mostrarConsola(name.value)">
+         Mostrar consola
+    </button>
+
+    <div class="alert alert-primary mt-4" *ngIf="mostrarAlert">
+        Es algo
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <form (ngSubmit)="procesar()" #formContact="ngForm">
+            <div class="mb-2">
+                <label class="form-label">Nombre:</label>
+                <input type="text" class="form-control" placeholder="Por favor ingresar un nombre" [(ngModel)]="persona.nombre" name="nombre" required #nombre="ngModel">
+                <div [hidden]="nombre.valid || nombre.pristine" > Mostrar</div>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Edad:</label>
+                <input type="number" class="form-control" placeholder="Por favor ingresar una edad" [(ngModel)]="persona.edad" name="edad" required #edad="ngModel">
+                <div [hidden]="edad.valid || edad.pristine" > Mostrar</div>
+            </div>
+            
+            <button class="btn btn-primary mt-2" [disabled]="">Enviar</button>
+        </form>
+    </div>
+</div>
+
+{{nombre.errors | json}}
+<hr>
+{{nombre.valid}}
+<hr>
+{{formContact.valid}}
