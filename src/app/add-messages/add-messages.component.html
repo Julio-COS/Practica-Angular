@@ -1,0 +1,7 @@
+<form (ngSubmit)="addMessage()">
+    <input type="text" name="message" [(ngModel)]="message">
+    <button>Agregar</button>
+</form>
+<br>
+{{message}}
+{{messageService.messages | json}}

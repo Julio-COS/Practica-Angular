@@ -1,3 +1,23 @@
 <h1>Hola bro</h1>
+<!-- 
+<input type="text" class="form-control" [(ngModel)]="title">
+<app-children [(title)]="title"></app-children>
+ -->
 
-<app-form2></app-form2>
+<!--  <app-add-messages></app-add-messages>
+ <app-list-messages></app-list-messages> -->
+<nav>
+    <ul>
+        <li>
+            <a routerLink="home" routerLinkActive="active">home</a>
+        </li>
+        <li>
+            <a routerLink="contact" routerLinkActive="active">contact</a>
+        </li>
+        <li>
+            <a routerLink="about" routerLinkActive="active">about</a>
+        </li>
+    </ul>
+</nav>
+
+ <router-outlet></router-outlet>
