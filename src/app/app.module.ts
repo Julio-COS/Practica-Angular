@@ -23,6 +23,7 @@ import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { ContactInfoComponent } from './contact-info/contact-info.component';
 
 const routes: Routes=[
   {
@@ -31,7 +32,13 @@ const routes: Routes=[
   },
   {
     path:'contact',
-    component: ContactComponent
+    component: ContactComponent,
+    children:[
+      {
+        path:'',
+        component:ContactInfoComponent,
+      },
+    ]
   },
   {
     path:'about',
@@ -73,7 +80,8 @@ const routes: Routes=[
     ContactComponent,
     PageNotFoundComponent,
     CoursesComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
+    ContactInfoComponent
   ],
   imports: [
     BrowserModule,
