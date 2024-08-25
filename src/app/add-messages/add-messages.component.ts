@@ -11,8 +11,9 @@ export class AddMessagesComponent {
   constructor(public messageService:MessagesService) { }
 
   message:string="";
+  message_second:string="";
   addMessage(){
-    this.messageService.add(this.message)
+    this.messageService.add(this.message+" "+this.message_second)
     this.message="";
   }
 }
